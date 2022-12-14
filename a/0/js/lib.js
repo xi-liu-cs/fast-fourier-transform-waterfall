@@ -88,10 +88,10 @@ function lib(gl, vertex_size)
     function shader_file_load(gl, file, type, start)
     {
         if(!type)
-            gl.fragment = file;
-        else
             gl.vertex = file;
-        if(gl.fragment && gl.vertex)
+        else
+            gl.fragment = file;
+        if(gl.vertex && gl.fragment)
             start();
     }
 
@@ -107,6 +107,6 @@ function lib(gl, vertex_size)
         request.open('get', file, true);
         request.send();
     }
-    shader_file(gl, 'glsl/0.frag', 0, shader_init);
-    shader_file(gl, 'glsl/0.vert', 1, shader_init);
+    shader_file(gl, 'glsl/0.vert', 0, shader_init);
+    shader_file(gl, 'glsl/0.frag', 1, shader_init);
 }
