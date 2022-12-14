@@ -1,4 +1,4 @@
-function lib(gl, vertex_size)
+function lib(gl, vertex_size, vertex_file, fragment_file)
 {
     function shader_load(type, source)
     {
@@ -107,6 +107,6 @@ function lib(gl, vertex_size)
         request.open('get', file, true);
         request.send();
     }
-    shader_file(gl, 'glsl/0.vert', 0, shader_init);
-    shader_file(gl, 'glsl/0.frag', 1, shader_init);
+    shader_file(gl, vertex_file, 0, shader_init);
+    shader_file(gl, fragment_file, 1, shader_init);
 }
