@@ -3,8 +3,8 @@ uniform vec3 uLd[nL];
 uniform vec3 uLc[nL];
 uniform mat4 uMaterial;
 
-uniform sampler2D uSampler; // index of the texture to be sampled
-uniform float uTexture;     // are we rendering texture for this object?
+uniform sampler2D uSampler; /* index of the texture to be sampled */
+uniform float uTexture;     /* are we rendering texture for this object? */
 
 varying vec3 vPos, vNor, v_color;
 varying vec2 vUV;
