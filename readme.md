@@ -3,7 +3,7 @@
 {
   \text{let } h(t) \text{ be an arbitrary, aperiodic function}\\
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
-  h(\text{x}, t) = \sum_{\text{k}} h ^ {\sim} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
+  h(\text{x}, t) = \sum_{\text{k}} \widetilde{h} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
 }
 ```
 find height $h$ given horizontal position $x, z$, and $t$
@@ -17,7 +17,7 @@ with complex time dependent amplitudes
 \displaylines
 {
   \mathbf{x} = (x, z)\\
-  h(\mathbf{x}, t) = \sum h ^ {\sim} (\mathbf{k}, t) e ^ {i\mathbf{k} \cdot \mathbf{x}}\\
+  h(\mathbf{x}, t) = \sum \widetilde{h} (\mathbf{k}, t) e ^ {i\mathbf{k} \cdot \mathbf{x}}\\
 }
 ```
 
