@@ -16,8 +16,8 @@ with complex time dependent amplitudes
 ```math
 \displaylines
 {
-  x = (x, z)\\
-  h(x, t) = sum htilde(k, t) e ^ {ikx}\\
+  \mathbf{x} = (x, z)\\
+  h(\mathbf{x}, t) = \sum \htilde(\mathbf{k}, t) e ^ {i\mathbf{k} \cdot \mathbf{x}}\\
 }
 ```
 
