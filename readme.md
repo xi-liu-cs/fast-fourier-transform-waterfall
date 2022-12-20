@@ -10,7 +10,7 @@ find height $h$ given horizontal position $x, z$, and $t$
 decompose the wave height field as a sum of sin and cos waves
 decomposition uses fft, rapid method of evaluating sums
 
-expresses wave height at horizontal position $(x, z)$ as sum of sin
+expresses wave height at horizontal position $(x, z)$ as sum of sinusoids
 with complex time dependent amplitudes
 
 ```math
@@ -21,14 +21,19 @@ with complex time dependent amplitudes
 }
 ```
 
-k is a 2d vector with components
+$\mathbf{k}$ is a 2d vector with components
 
-k = (k_x, k_z)
-k_x = 2 pi n / l_x
-k_z = 2 pi n / l_z
-l is length of the wave
--N / 2 <= n < N / 2
--M / 2 <= m < M / 2
+```math
+\displaylines
+{
+  k = (k_x, k_z)
+  k_x = 2 pi n / l_x
+  k_z = 2 pi n / l_z
+  l is length of the wave
+  -N / 2 <= n < N / 2
+  -M / 2 <= m < M / 2
+}
+```
 
 generates height field at discrete points x = (n l_x / N, m l_z / M)
 
