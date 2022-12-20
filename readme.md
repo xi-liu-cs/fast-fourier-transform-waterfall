@@ -35,33 +35,32 @@ $\mathbf{k}$ is a 2d vector with components
 }
 ```
 
-generates height field at discrete points x = (n l_x / N, m l_z / M)
+generates height field at discrete points $x = (n l_x / N, m l_z / M)$
 
 float value
-wave spectrum p_h(k)
-p_h(k) = a(e ^ (-1 / (kl) ^ 2)) / k ^ 4 |k dot w| ^ 2
-    w = wind direction
-    l = v ^ 2 / g = max wave from wind of speed v
+wave spectrum $p_h(k)$
+$p_h(k) = a(e ^ (-1 / (kl) ^ 2)) / k ^ 4 |k dot w| ^ 2$
+    $w$ = wind direction
+    $l = v ^ 2 / g$ = max wave from wind of speed v
 
-where L = V ^ 2 / g is the largest possible waves arising
-from a continuous wind of speed V,
-g is the gravitational constant, and w is
+where $L = V ^ 2 / g$ is the largest possible waves arising
+from a continuous wind of speed $V$,
+$g$ is the gravitational constant, and $w$ is
 the direction of the wind
 
-htilde0(k) = 1 / sqrt{2} (ξ_r + i ξ_i) sqrt{p_h(k)}
-where ξr and ξi are ordinary independent draws from a gaussian
+$\widetilde{h}(k) = 1 / sqrt{2} (\xi_r + i \xi_i) sqrt{p_h(k)}$
+where $ξr$ and $ξi$ are ordinary independent draws from a gaussian
 random number generator, with mean 0 and standard deviation 1.
 Gaussian distributed random numbers tend to follow the experimental data on ocean waves
 
 in the fft representation,
 the 2d displacement vector field is computed using the fourier amplitudes
 of the height field, as
-D(X, t) = sum -i K / k htilde(K, t) e ^ {ikx}
+$D(X, t) = \sum -i K / k htilde(K, t) e ^ {ikx}$
 
 oop make easy to switch shaders
 load glsl files is still hard, need to setup servers to do it
 why can i only do <script src = 'js'> but cannot just do <script src = 'glsl'>
-https://stackoverflow.com/questions/48946159/load-glsl-file-webgl-in-html
 currently shaders are written in the html files
 to be easier to switched when just getelementbyid
 
