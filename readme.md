@@ -6,7 +6,7 @@
   h(\text{x}, t) = \sum_{\text{k}} h ^ ~ (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
 }
 ```
-find height h given horizontal position $x, z$, and $t$
+find height $h$ given horizontal position $x, z$, and $t$
 decompose the wave height field as a sum of sin and cos waves
 decomposition uses fft, rapid method of evaluating sums
 
