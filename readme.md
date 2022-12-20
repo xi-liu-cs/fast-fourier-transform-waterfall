@@ -10,11 +10,16 @@ find height $h$ given horizontal position $x, z$, and $t$
 decompose the wave height field as a sum of sin and cos waves
 decomposition uses fft, rapid method of evaluating sums
 
-expresses wave height at horizontal position (x, z) as sum of sin
+expresses wave height at horizontal position $(x, z)$ as sum of sin
 with complex time dependent amplitudes
 
-x = (x, z)
-h(x, t) = sum htilde(k, t) e ^ {ikx}
+```math
+\displaylines
+{
+  x = (x, z)\\
+  h(x, t) = sum htilde(k, t) e ^ {ikx}\\
+}
+```
 
 k is a 2d vector with components
 
