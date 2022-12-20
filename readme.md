@@ -40,7 +40,7 @@ generates height field at discrete points $x = (n l_x / N, m l_z / M)$
 float value
 wave spectrum $p_h(k)$
 ```math
-p_h(k) = a(e ^ (-1 / (kl) ^ 2)) / k ^ 4 |k dot w| ^ 2
+p_h(k) = a(e ^ {-1 / (kl) ^ 2}) / k ^ 4 |k \dot w| ^ 2
 ```
 $w$ = wind direction
 $l = v ^ 2 / g$ = max wave from wind of speed v
