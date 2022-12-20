@@ -1,0 +1,203 @@
+<body bgcolor = #e6d0bd>
+    <select id = "room_choice">
+        <option value = "scene">scene</option>
+    </select>
+    <dev id = buttons></dev>
+    <div style = "margin-left: 900px; margin-top: 100px; color: black;">
+        <p>waterfall from mountains</p>
+        <button id = 'mode' onclick = 'handle_mode()' value = '0' style = 'width : 200px; height: 50px; background-color: black; color: white'>change movement mode</button><p></p>
+        <button id = 'move' onclick = 'handle_click()' value = '0' style = 'width : 200px; height: 50px; background-color: black; color: white'>stop or start wave</button><p></p>
+        <p>wave amplitude</p>
+        <input type = 'range' id = 'wave_input' value = '50.0' min = '20.0' max = '100.0' onchange = 'handle_wave_input()'><br>
+        <div style = 'float: left'>
+            <p>forward -z</p>
+            <input type = 'range' id = 'front_input' value = '0.0' min = '0.0' max = '10.0'>
+            <p>left x</p>
+            <input type = 'range' id = 'left_input' value = '0.0' min = '0.0' max = '10.0'>
+            <p>up -y</p>
+            <input type = 'range' id = 'top_input' value = '0.0' min = '0.0' max = '10.0'>
+        </div>
+        <p>backward z</p>
+        <input type = 'range' id = 'back_input' value = '0.0' min = '0.0' max = '10.0'>
+        <p>right -x</p>
+        <input type = 'range' id = 'right_input' value = '0.0' min = '0.0' max = '10.0'>
+        <p>down y</p>
+        <input type = 'range' id = 'down_input' value = '0.0' min = '0.0' max = '10.0'>
+    </div>
+    <canvas id = "canvas" width = 800 height = 700 style = "position: absolute; top: 35px;"></canvas>
+    <script>
+    function handle_click()
+    {
+        let mov = document.getElementById('move').value;
+        if(mov == 0)
+            document.getElementById('move').value = 1;
+        else
+            document.getElementById('move').value = 0;
+    }
+
+    function handle_mode()
+    {
+        let mod = document.getElementById('mode').value;
+        if(mod == 0)
+            document.getElementById('mode').value = 1;
+        else
+            document.getElementById('mode').value = 0;
+        let canvas = document.getElementById('canvas'),
+        gl = canvas.getContext('webgl2'),
+        wave1 = new wave(gl, canvas, gl.TRIANGLES);
+        wave1.gen();
+        wave1.draw_mesh();
+    }
+    
+    function handle_wave_input()
+    {
+        let canvas = document.getElementById('canvas'),
+        gl = canvas.getContext('webgl2'),
+        wave1 = new wave(gl, canvas, gl.TRIANGLES);
+        wave1.gen();
+        wave1.draw_mesh();
+    }
+    </script>
+    <script src = "js/lib.js"></script>
+    <script src = "js/lib3d.js"></script>
+    <script src = "js/matrix.js"></script>
+    <script src = "js/array.js"></script>
+    <script src = "js/fft.js"></script>
+    <script src = "js/sky.js"></script>
+    <script src = "js/sky2.js"></script>
+    <script src = "js/mesh.js"></script>
+    <script src = "js/complex.js"></script>
+    <script src = "js/wave.js"></script>
+    <script src = "js/wave2.js"></script>
+    <script src = "js/spectrum.js"></script>
+    <script src = "js/human.js"></script>
+    <script src = "js/scene.js"></script>
+</body>
+
+<script id = "sky.vert" type = "x-shader/x-vertex">
+precision highp float;
+attribute vec3 a_pos;
+uniform mat4 u_view, u_project; 
+varying vec3 v_pos;
+#define c 1000.0
+
+void main() 
+{     
+    v_pos = a_pos;
+    gl_Position = u_project * u_view * vec4(c * a_pos, 1.0);
+}
+</script>
+
+<script id = "sky.frag" type = "x-shader/x-fragment">
+precision highp float;
+varying vec3 v_pos;
+
+void main() 
+{
+    float height = 1.0 / v_pos.y;
+    vec3 color = 0.03 * height * vec3(0.35, 0.2, 1.0);
+    color = .7 * mix(color, color / (2.1 * color + 0.4 - color), 1.0);
+    gl_FragColor = vec4(color, 1.0);
+}
+</script>
+
+<script id = "wave.vert" type = "x-shader/x-vertex">
+precision highp float; 
+precision highp sampler2D;
+attribute vec3 a_pos;
+uniform mat4 u_project, u_view, u_inverse_project, u_inverse_view;
+uniform vec3 u_camera;
+uniform sampler2D u_displace; 
+varying vec2 v_tex;
+varying vec3 v_cam;
+varying vec4 v_pos;
+#define compute_texture(s, tex)(texture2D(s, tex) + 2.0 * texture2D(s, 0.5 * tex) + 8.0 * texture2D(s, 0.125 * tex))
+
+void main()
+{ 
+    v_cam = u_camera;
+    vec3 cam = normalize((u_inverse_project * vec4(a_pos.xz, 0.0, 1.0)).xyz);
+    vec3 world  = (u_inverse_view * vec4(cam, 0.0)).xyz;
+    float t = -u_camera.y / world.y;
+    vec3 a =  u_camera + t * world;
+    v_tex = 0.5 * (a.xz + 1.0);
+    a += compute_texture(u_displace, v_tex).xyz;
+    v_pos = vec4(a, 1.0);
+    gl_Position = t > 0.0 ? u_project * u_view * vec4(a, 1.0) : vec4(0.0, 0.0, 0.0, 0.0);
+}
+</script>
+
+<script id = "wave.frag" type = "x-shader/x-fragment">
+precision highp float;
+precision highp sampler2D;
+uniform sampler2D u_displace;
+varying vec2 v_tex;
+varying vec3 v_cam;
+varying vec4 v_pos;
+#define pi 3.1415926
+#define sample 1024.0
+#define wave_color vec3(0.06, 0.2, 0.5)
+#define light_pos vec4(0.)
+#define max_loop 1024
+#define compute_texture(s, tex)(texture2D(s, tex) + 2.0 * texture2D(s, 0.5 * tex) + 8.0 * texture2D(s, 0.125 * tex))
+/*
+ ---- a3 ---- 
+|     |      |
+a1 -- c  -- a2
+|     |      |
+ ---- a4 ----
+*/
+vec3 normal_map(sampler2D s_height_map, vec2 tex)
+{
+    float texel = 1.0 / sample;
+    float texel2 = 2.0 / sample; 
+    vec3 center = compute_texture(s_height_map, tex).xyz;
+    vec2 tex_array[4]; tex_array[0] = tex + vec2(-texel, 0.0); tex_array[1] = tex + vec2(texel, 0.0); tex_array[2] = tex + vec2(0.0, texel); tex_array[3] = tex + vec2(0.0, -texel);
+    vec3 a1 = vec3(-texel2, 0.0, 0.0) + compute_texture(s_height_map, tex_array[0]).xyz - center,
+    a2 = vec3(texel2, 0.0, 0.0) + compute_texture(s_height_map, tex_array[1]).xyz - center, 
+    a3 = vec3(0.0, 0.0, texel2) + compute_texture(s_height_map, tex_array[2]).xyz - center,
+    a4 = vec3(0.0, 0.0, -texel2) + compute_texture(s_height_map, tex_array[3]).xyz - center,
+    a13 = cross(a1, a3), a23 = cross(a2, a3), a24 = cross(a2, a4), a41 = cross(a4, a1);
+    return normalize(a13 + a23 + a24 + a41);
+}
+
+
+void main()
+{
+    vec3 light_direct = normalize(light_pos.xyz),
+    view = normalize(v_cam - v_pos.xyz),
+    light_vector = normalize(light_direct + view),
+    nor = normal_map(u_displace, v_tex);
+    if(dot(view, nor) < 0.0) nor = reflect(nor, -view);
+    float pow_nor_view = pow(1.0 - dot(nor, view), 6.0);
+    vec3 color = mix(wave_color / pi, vec3(1.), pow_nor_view) + vec3(0.1);
+    color += vec3(0.07, 0.4, 0.4) * (v_pos.y * 2.0 / (length(v_cam.xyz - v_pos.xyz)));
+    color = vec3(1.0) - exp(-1.3 * color);
+    gl_FragColor = vec4(color, 1.0);
+}
+</script>
+
+<script id = "sky2.vert" type = "x-shader/x-vertex">
+precision highp float;
+#define c 1000.0
+attribute vec3 a_pos, a_color;
+uniform mat4 u_view, u_inverse_view, u_project; 
+varying vec3 v_pos, v_nor, v_color;
+varying vec2 v_uv;
+
+void main() 
+{     
+    v_color = a_color;
+    gl_Position = u_project * u_view * vec4(c * a_pos, 1.0);
+}
+</script>
+    
+<script id = "sky2.frag" type = "x-shader/x-fragment">
+precision highp float;
+varying vec3 v_pos, v_color;
+
+void main() 
+{
+    gl_FragColor = vec4(v_color, 1.0);
+}
+</script>
