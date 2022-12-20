@@ -39,16 +39,18 @@ generates height field at discrete points $x = (n l_x / N, m l_z / M)$
 
 float value
 wave spectrum $p_h(k)$
-$p_h(k) = a(e ^ (-1 / (kl) ^ 2)) / k ^ 4 |k dot w| ^ 2$
-    $w$ = wind direction
-    $l = v ^ 2 / g$ = max wave from wind of speed v
+```math
+p_h(k) = a(e ^ (-1 / (kl) ^ 2)) / k ^ 4 |k dot w| ^ 2
+```
+$w$ = wind direction
+$l = v ^ 2 / g$ = max wave from wind of speed v
 
 where $L = V ^ 2 / g$ is the largest possible waves arising
 from a continuous wind of speed $V$,
 $g$ is the gravitational constant, and $w$ is
 the direction of the wind
 
-$\widetilde{h}(k) = 1 / sqrt{2} (\xi_r + i \xi_i) sqrt{p_h(k)}$
+$\widetilde{h}(k) = 1 / \sqrt{2} (\xi_r + i \xi_i) \sqrt{p_h(k)}$
 where $ξr$ and $ξi$ are ordinary independent draws from a gaussian
 random number generator, with mean 0 and standard deviation 1.
 Gaussian distributed random numbers tend to follow the experimental data on ocean waves
@@ -56,7 +58,7 @@ Gaussian distributed random numbers tend to follow the experimental data on ocea
 in the fft representation,
 the 2d displacement vector field is computed using the fourier amplitudes
 of the height field, as
-$D(X, t) = \sum -i K / k htilde(K, t) e ^ {ikx}$
+$D(X, t) = \sum -i K / k \widetilde{h}(K, t) e ^ {ikx}$
 
 oop make easy to switch shaders
 load glsl files is still hard, need to setup servers to do it
