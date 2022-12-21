@@ -24,13 +24,13 @@ with complex time dependent amplitudes
 ```
 
 $\mathbf{k}$ is a 2d vector with components
-
+for a wave with horizontal dimensions $L_x \times L_z$
 ```math
 \displaylines
 {
   k = (k_x, k_z)\\
-  k_x = 2 \pi n / l_x\\
-  k_z = 2 \pi n / l_z\\
+  k_x = 2 \pi n / L_x\\
+  k_z = 2 \pi n / L_z\\
   l \text{ is length of the wave}\\
   -N / 2 \leq n < N / 2\\
   -M / 2 \leq m < M / 2\\
