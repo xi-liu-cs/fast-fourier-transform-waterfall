@@ -67,7 +67,7 @@ why can i only do <script src = 'js'> but cannot just do <script src = 'glsl'>
 currently shaders are written in the html files
 to be easier to switched when just getelementbyid
 
-if more time, do the fft and philips spectrum calculations in gpu in compute shaders instead of cpu
+for future work, the fft and philips spectrum calculations in gpu compute shaders instead of cpu
 currently code is in cpu, cpu have the advantage of more flexible in the coding part
 where classes can be easily called by other classes, webassembly also can be used
 
