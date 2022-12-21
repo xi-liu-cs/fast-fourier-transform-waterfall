@@ -2,11 +2,11 @@
 Xi Liu<br>
 This project is done for computer graphics course at New York University, fall 2022, using WebGL.<br>
 Wave simulation using fast fourier transformation. The task is to find height $h$ given horizontal position $x, z$, and $t$.<br>
-Decompose the wave height field as a sum of sin and cos waves decomposition uses fft, rapid method of evaluating sums.<br>
+Decompose the wave height field as a sum of sin and cos waves decomposition using fft.<br>
+let $\textbf{f} \in \mathscr{f}(\mathbb{R} ^ n)$ be. Discrete fourier transform of a discrete signal $\textbf{f}$
 ```math
 \displaylines
 {
-  \text{f} = (\text{f}[0], \text{f}[1], ..., \text{f}[n - 1])\\
   \text{let } h(t) \text{ be an arbitrary, aperiodic function}\\
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
   h(\text{x}, t) = \sum_{\text{k}} \widetilde{h} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
