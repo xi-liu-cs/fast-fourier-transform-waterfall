@@ -6,6 +6,7 @@ decompose the wave height field as a sum of sin and cos waves decomposition uses
 ```math
 \displaylines
 {
+  \text{f} = (\text{f}[0], \text{f}[1], ..., \text{f}[n - 1])\\
   \text{let } h(t) \text{ be an arbitrary, aperiodic function}\\
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
   h(\text{x}, t) = \sum_{\text{k}} \widetilde{h} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
