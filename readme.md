@@ -1,5 +1,9 @@
 # waterfall from mountains
 
+Xi Liu
+
+This project is done for computer graphics course at New York University, fall 2022, using WebGL.
+
 ```math
 \displaylines
 {
