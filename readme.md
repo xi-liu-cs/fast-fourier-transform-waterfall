@@ -1,6 +1,3 @@
-![0](a/image/0.png)
-![1](a/image/1.png)
-![2](a/image/2.png)
 ```math
 \displaylines
 {
@@ -72,3 +69,7 @@ to be easier to switched when just getelementbyid
 if more time, do the fft and philips spectrum calculations in gpu in compute shaders instead of cpu
 currently code is in cpu, cpu have the advantage of more flexible in the coding part
 where classes can be easily called by other classes, webassembly also can be used
+
+![0](a/image/0.png)
+![1](a/image/1.png)
+![2](a/image/2.png)
