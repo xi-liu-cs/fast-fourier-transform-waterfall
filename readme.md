@@ -10,6 +10,8 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
   \widetilde{f}(k) = \int_{\mathbb{R} ^ n} f(x) e ^ {-2 \pi i k x} dx\\
   \text{for discrete signal $f$ with $N$ samples}\\
   \widetilde{f}[k] = \sum_{n = 0} ^ {N - 1} f[n] e ^ {\frac{-2 \pi i k n}{N}}\\
+  \text{computing $\widetilde{f}$ of $f$ with $N$ samples naively require $N$ complex multiplications\\
+  \text{and $N - 1$ complex additions for each element of $\widetilde{f}$, so its total time complexity is $\mathscr{O}(n ^ 2)}\\
   \text{let } h(t) \text{ be an arbitrary, aperiodic function}\\
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
   h(\text{x}, t) = \sum_{\text{k}} \widetilde{h} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
