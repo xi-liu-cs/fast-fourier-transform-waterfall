@@ -1,3 +1,6 @@
+![0](a/image/0.png)
+![1](a/image/1.png)
+![2](a/image/2.png)
 ```math
 \displaylines
 {
