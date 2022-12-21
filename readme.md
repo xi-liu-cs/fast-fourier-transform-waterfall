@@ -3,11 +3,12 @@ Xi Liu<br>
 This project is done for computer graphics course at New York University, fall 2022, using WebGL.<br>
 Wave simulation using fast fourier transformation. The task is to find height $h$ given horizontal position $x, z$, and $t$.<br>
 Decompose the wave height field as a sum of sin and cos waves decomposition using fft.<br>
-let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\mathbb{R} ^ n, \mathbb{C}) | \forall \alpha, \beta \in \mathbb{N} ^ n, \sup_{x \in \mathbb{R} ^ n} |x ^ {\alpha} (\delta ^ {\beta} f)(x)| < \infty\\}$ be a schwartz space, $f \in \mathscr{S}(\mathbb{R} ^ n)$ be a signal. Define $\tilde f$ as the fourier transform of $f$
+Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\mathbb{R} ^ n, \mathbb{C}) | \forall \alpha, \beta \in \mathbb{N} ^ n, \sup_{x \in \mathbb{R} ^ n} |x ^ {\alpha} (\delta ^ {\beta} f)(x)| < \infty\\}$ be a schwartz space, $f \in \mathscr{S}(\mathbb{R} ^ n)$ be a signal. Define $\widetilde f$ as the fourier transform of $f$
 ```math
 \displaylines
 {
-  \tilde{f}(k) = \int_{\mathbb{R} ^ n} f(x) e ^ {-2 \pi i x k} dx\\
+  \widetilde{f}(k) = \int_{\mathbb{R} ^ n} f(x) e ^ {-2 \pi i k x} dx\\
+  \widetilde{f}[k] = \sum_{n = 0} ^ {N - 1} f(n) e ^ {\frac{-2 \pi i k n}{N}}\\
   \text{let } h(t) \text{ be an arbitrary, aperiodic function}\\
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
   h(\text{x}, t) = \sum_{\text{k}} \widetilde{h} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
