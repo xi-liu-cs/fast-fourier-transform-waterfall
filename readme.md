@@ -91,6 +91,13 @@ for the fft computation, the Cooley Tukey FFT algorithm is used
 the result of 2d-ifft is a ocean wave height field.
 then the glsl functions texture2d is used to lookup from within that texture.
 
+do not try to see this project on a mobile device, since a lot of the mobile
+devices do not support opengl extensions for floating point textures
+```
+this.gl.getExtension("EXT_color_buffer_float"); /* enable gl.RGBA32F to be color renderable */
+this.gl.getExtension("OES_texture_float_linear"); /* linear filtering with float pixel textures */
+```
+
 oop make easy to switch shaders
 load glsl files is still hard, need to setup servers to do it
 why can i only do <script src = 'js'> but cannot just do <script src = 'glsl'>
