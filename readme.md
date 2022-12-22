@@ -1,4 +1,5 @@
 # waterfall from mountains
+![2](a/image/2.png)
 Xi Liu<br>
 This project is done for computer graphics course at New York University, fall 2022, using WebGL.<br>
 Wave simulation using fast fourier transformation. The task is to find height $h$ given horizontal position $x, z$, and $t$.<br>
@@ -108,4 +109,3 @@ to lower the branch divergence on the gpu, several shaders are used now. for fut
 
 ![0](a/image/0.png)
 ![1](a/image/1.png)
-![2](a/image/2.png)
