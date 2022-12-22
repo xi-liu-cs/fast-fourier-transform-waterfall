@@ -29,7 +29,7 @@ class wave2
         this.gl.enable(this.gl.DEPTH_TEST);
         this.sky1.gen();
         this.mesh.gen();
-    };
+    }
 
     wave()
     {
@@ -45,7 +45,7 @@ class wave2
             this_ptr.draw_mesh();
         }
         window.requestAnimationFrame(callback);
-    };
+    }
 
     color()
     {

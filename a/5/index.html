@@ -3,12 +3,13 @@
         <option value = "scene">scene</option>
     </select>
     <dev id = buttons></dev>
-    <div style = "margin-left: 900px; margin-top: 100px; color: black;">
+    <div style = "margin-left: 900px; color: black;">
         <p>waterfall from mountains</p>
-        <button id = 'mode' onclick = 'handle_mode()' value = '0' style = 'width : 200px; height: 50px; background-color: black; color: white'>change movement mode</button><p></p>
+        <button id = 'mode' onclick = 'handle_mode()' value = '1' style = 'width : 200px; height: 50px; background-color: black; color: white'>change movement mode</button><p></p>
         <button id = 'move' onclick = 'handle_click()' value = '0' style = 'width : 200px; height: 50px; background-color: black; color: white'>stop or start wave</button><p></p>
         <p>wave amplitude</p>
-        <input type = 'range' id = 'wave_input' value = '50.0' min = '20.0' max = '100.0' onchange = 'handle_wave_input()'><br>
+        <input type = 'range' id = 'wave_input' value = '50.0' min = '20.0' max = '100.0' onchange = 'handle_wave_input()'><p></p>
+        <button id = 'default_amplitude' style = 'width : 200px; height: 50px; background-color: black; color: white'>default amplitude</button><p></p><br>
         <div style = 'float: left'>
             <p>forward -z</p>
             <input type = 'range' id = 'front_input' value = '0.0' min = '0.0' max = '10.0'>
@@ -26,7 +27,7 @@
         <p>change color</p>
         <input type = 'range' id = 'color_input' value = '0.0' min = '0.0' max = '10.0'>
         <p></p>
-        <button id = 'default_color' style = 'width : 200px; height: 50px; background-color: black; color: white'>go back to default color</button><p></p>
+        <button id = 'default_color' style = 'width : 200px; height: 50px; background-color: black; color: white'>default color</button><p></p>
     </div>
     <canvas id = "canvas" width = 800 height = 700 style = "position: absolute; top: 35px;"></canvas>
     <script>

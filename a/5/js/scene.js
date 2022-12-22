@@ -6,6 +6,12 @@ window.onload = function()
     wave1.gen();
     wave1.draw_mesh();
 
+    document.getElementById('default_amplitude').onclick =
+    function()
+    {
+        window.location.reload();
+    };
+
     document.getElementById('front_input').onchange =
     function()
     {

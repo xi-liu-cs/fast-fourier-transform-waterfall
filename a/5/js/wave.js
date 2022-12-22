@@ -33,7 +33,7 @@ class wave
         this.sky1.gen();
         this.sky2.gen();
         this.mesh.gen();
-    };
+    }
 
     wave()
     {
@@ -49,7 +49,7 @@ class wave
             this_ptr.draw_mesh();
         }
         window.requestAnimationFrame(callback); /* update animation onscreen */
-    };
+    }
 
     color()
     {
@@ -63,7 +63,6 @@ class wave
 
     default_color()
     {
-        console.log('66');
         this.u_wave_color = [0.06, 0.2, 0.5];
         this.wave2.default_color();
         this.sky1.default_color();
