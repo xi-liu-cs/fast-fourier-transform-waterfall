@@ -86,6 +86,8 @@ wave()
 }
 ```
 
+for the fft computation, the Cooley Tukey FFT algorithm is used
+
 the result of 2d-ifft is a ocean wave height field.
 then the glsl functions texture2d is used to lookup from within that texture.
 
