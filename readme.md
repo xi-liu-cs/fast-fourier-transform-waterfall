@@ -68,6 +68,9 @@ the 2d displacement vector field is computed using the fourier amplitudes
 of the height field, as
 $D(X, t) = \sum -i K / k \widetilde{h}(K, t) e ^ {ikx}$
 
+the result of 2d-ifft is a ocean wave height field.
+then the glsl functions texture2d is used to lookup from within that texture.
+
 oop make easy to switch shaders
 load glsl files is still hard, need to setup servers to do it
 why can i only do <script src = 'js'> but cannot just do <script src = 'glsl'>
