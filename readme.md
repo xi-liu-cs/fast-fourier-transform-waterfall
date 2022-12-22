@@ -68,6 +68,24 @@ the 2d displacement vector field is computed using the fourier amplitudes
 of the height field, as
 $D(X, t) = \sum -i K / k \widetilde{h}(K, t) e ^ {ikx}$
 
+```javascript
+wave()
+{
+    let this_ptr = this;
+    function callback()
+    {
+        this_ptr.interval += 0.2;
+        let s = this_ptr.spectrum1.ocean(this_ptr.interval, this_ptr.htilde0, this_ptr.htilde1),
+        x = this_ptr.fft.ifft(s.x),
+        y = this_ptr.fft.ifft(s.y),
+        z = this_ptr.fft.ifft(s.z);
+        this_ptr.tex1.tex(x, y, z);
+        this_ptr.draw_mesh();
+    }
+    window.requestAnimationFrame(callback);
+}
+```
+
 the result of 2d-ifft is a ocean wave height field.
 then the glsl functions texture2d is used to lookup from within that texture.
 
