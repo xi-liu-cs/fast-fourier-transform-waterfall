@@ -93,7 +93,7 @@ then the glsl functions texture2d is used to lookup from within that texture.
 
 do not try to see this project on a mobile device, since a lot of the mobile
 devices do not support opengl extensions for floating point textures
-```
+```javascript
 this.gl.getExtension("EXT_color_buffer_float"); /* enable gl.RGBA32F to be color renderable */
 this.gl.getExtension("OES_texture_float_linear"); /* linear filtering with float pixel textures */
 ```
