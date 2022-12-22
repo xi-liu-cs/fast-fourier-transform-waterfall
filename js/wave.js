@@ -33,7 +33,7 @@ class wave
         this.sky1.gen();
         this.sky2.gen();
         this.mesh.gen();
-    };
+    }
 
     wave()
     {
@@ -49,7 +49,7 @@ class wave
             this_ptr.draw_mesh();
         }
         window.requestAnimationFrame(callback); /* update animation onscreen */
-    };
+    }
 
     color()
     {
