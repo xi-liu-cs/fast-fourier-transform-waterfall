@@ -60,14 +60,12 @@ $g$ is the gravitational constant, and $w$ is
 the direction of the wind
 
 $\widetilde{h}(k) = 1 / \sqrt{2} (\xi_r + i \xi_i) \sqrt{p_h(k)}$
-where $ξr$ and $ξi$ are ordinary independent draws from a gaussian
-random number generator, with mean 0 and standard deviation 1.
-Gaussian distributed random numbers tend to follow the experimental data on ocean waves
+where $\xi_r$ and $\xi_i$ are ordinary independent draws from a gaussian
+random number generator, with mean 0 and standard deviation 1. gaussian distributed random numbers tend to follow the experimental data on ocean waves
 
-in the fft representation,
-the 2d displacement vector field is computed using the fourier amplitudes
+in the fft representation, the 2d displacement vector field is computed using the fourier amplitudes
 of the height field, as
-$D(X, t) = \sum -i K / k \widetilde{h}(K, t) e ^ {ikx}$
+$D(X, t) = \sum -i \frac{K}{k} \widetilde{h}(K, t) e ^ {ikx}$
 
 ```javascript
 wave()
@@ -91,6 +89,7 @@ for the fft computation, the cooley tukey fft algorithm is used.
 the result of 2d ifft is a wave height field.
 then the glsl functions texture2d is used to lookup from within that texture.
 
+at the right side of the webpage, click and release the sliders to see the change<br>
 do not try to see this project on a mobile device, since a lot of the mobile
 devices do not support opengl extensions for floating point textures
 ```javascript
