@@ -3,7 +3,7 @@
 Xi Liu<br>
 This project is done for computer graphics course at New York University, fall 2022, using WebGL.<br>
 Wave simulation using fast fourier transformation. The task is to find height $h$ given horizontal position $x, z$, and $t$.<br>
-Decompose the wave height field as a sum of sin and cos waves decomposition using fft.<br>
+Decompose the wave height field as a sum of sin and cos waves using fft.<br>
 Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\mathbb{R} ^ n, \mathbb{C}) | \forall \alpha, \beta \in \mathbb{N} ^ n, \sup_{x \in \mathbb{R} ^ n} |x ^ {\alpha} \delta ^ {\beta} f(x)| < \infty\\}$ be a schwartz space, $f \in \mathscr{S}(\mathbb{R} ^ n)$ be a signal. Define $\widetilde f$ as the fourier transform of $f$
 ```math
 \displaylines
