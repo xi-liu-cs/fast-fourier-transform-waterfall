@@ -59,7 +59,7 @@ from a continuous wind of speed $V$,
 $g$ is the gravitational constant, and $w$ is
 the direction of the wind
 
-$\widetilde{h}(k) = 1 / \sqrt{2} (\xi_r + i \xi_i) \sqrt{p_h(k)}$
+$\widetilde{h}(k) = \frac{1}{\sqrt{2}} (\xi_r + i \xi_i) \sqrt{p_h(k)}$
 where $\xi_r$ and $\xi_i$ are ordinary independent draws from a gaussian
 random number generator, with mean 0 and standard deviation 1. gaussian distributed random numbers tend to follow the experimental data on ocean waves
 
