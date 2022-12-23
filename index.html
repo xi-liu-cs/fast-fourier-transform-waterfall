@@ -87,7 +87,7 @@ varying vec3 v_pos;
 #define c 1000.0
 
 void main() 
-{     
+{
     v_pos = a_pos;
     gl_Position = u_project * u_view * vec4(c * a_pos, 1.0);
 }
@@ -184,11 +184,11 @@ void main()
 
 <script id = "sky2.vert" type = "x-shader/x-vertex">
 precision highp float;
-#define c 1000.0
 attribute vec3 a_pos, a_color;
 uniform mat4 u_view, u_project; 
 varying vec3 v_pos, v_nor, v_color;
 varying vec2 v_uv;
+#define c 1000.0
 
 void main() 
 {     
