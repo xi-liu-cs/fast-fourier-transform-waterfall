@@ -86,8 +86,7 @@ wave()
 ```
 
 for the fft computation, the cooley tukey fft algorithm is used.
-the result of 2d ifft is a wave height field.
-then the glsl functions texture2d is used to lookup from within that texture.
+the result of 2d ifft is a wave height field, then the glsl functions texture2d is used to lookup from within that texture.
 
 at the right side of the webpage, click and release the sliders to see the change<br>
 do not try to see this project on a mobile device, since a lot of the mobile
