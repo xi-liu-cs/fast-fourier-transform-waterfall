@@ -113,7 +113,7 @@ precision highp sampler2D;
 attribute vec3 a_pos;
 uniform mat4 u_project, u_view, u_inverse_project, u_inverse_view;
 uniform vec3 u_camera, u_wave_color;
-uniform sampler2D u_displace; 
+uniform sampler2D u_displace;
 varying vec2 v_tex;
 varying vec3 v_cam;
 varying vec4 v_pos;
@@ -122,8 +122,8 @@ varying vec4 v_pos;
 void main()
 { 
     v_cam = u_camera;
-    vec3 cam = normalize((u_inverse_project * vec4(a_pos.xz, 0.0, 1.0)).xyz);
-    vec3 world  = (u_inverse_view * vec4(cam, 0.0)).xyz;
+    vec3 cam = normalize((u_inverse_project * vec4(a_pos.xz, 0.0, 1.0)).xyz),
+    world  = (u_inverse_view * vec4(cam, 0.0)).xyz;
     float t = -u_camera.y / world.y;
     vec3 a =  u_camera + t * world;
     v_tex = 0.5 * (a.xz + 1.0);
@@ -144,7 +144,6 @@ varying vec4 v_pos;
 #define pi 3.1415926
 #define sample 1024.0
 #define light_pos vec4(0.)
-#define max_loop 1024
 #define compute_texture(s, tex)(texture2D(s, tex) + 2.0 * texture2D(s, 0.5 * tex) + 8.0 * texture2D(s, 0.125 * tex))
 /*
  ---- a3 ---- 
@@ -155,8 +154,8 @@ a1 -- c  -- a2
 */
 vec3 normal_map(sampler2D s_height_map, vec2 tex)
 {
-    float texel = 1.0 / sample;
-    float texel2 = 2.0 / sample; 
+    float texel = 1.0 / sample,
+    texel2 = 2.0 / sample;
     vec3 center = compute_texture(s_height_map, tex).xyz;
     vec2 tex_array[4]; tex_array[0] = tex + vec2(-texel, 0.0); tex_array[1] = tex + vec2(texel, 0.0); tex_array[2] = tex + vec2(0.0, texel); tex_array[3] = tex + vec2(0.0, -texel);
     vec3 a1 = vec3(-texel2, 0.0, 0.0) + compute_texture(s_height_map, tex_array[0]).xyz - center,
