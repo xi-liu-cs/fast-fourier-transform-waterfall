@@ -2,7 +2,7 @@
 ![2](a/image/2.png)
 Xi Liu<br>
 This project is done for computer graphics course at New York University, fall 2022, using WebGL.<br>
-Wave simulation using fast fourier transformation.
+Waterfall simulation using fast fourier transformation.
 
 ## method
 The task is to find height $h$ given horizontal position $x, z$, and $t$.<br>
