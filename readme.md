@@ -2,7 +2,10 @@
 ![2](a/image/2.png)
 Xi Liu<br>
 This project is done for computer graphics course at New York University, fall 2022, using WebGL.<br>
-Wave simulation using fast fourier transformation. The task is to find height $h$ given horizontal position $x, z$, and $t$.<br>
+Wave simulation using fast fourier transformation.
+
+## method
+The task is to find height $h$ given horizontal position $x, z$, and $t$.<br>
 Decompose the wave height field as a sum of sin and cos waves using fft.<br>
 Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\mathbb{R} ^ n, \mathbb{C}) | \forall \alpha, \beta \in \mathbb{N} ^ n, \sup_{x \in \mathbb{R} ^ n} |x ^ {\alpha} \delta ^ {\beta} f(x)| < \infty\\}$ be a schwartz space, $f \in \mathscr{S}(\mathbb{R} ^ n)$ be a signal. Define $\widetilde f$ as the fourier transform of $f$
 ```math
@@ -96,7 +99,8 @@ this.gl.getExtension("EXT_color_buffer_float"); /* enable gl.RGBA32F to be color
 this.gl.getExtension("OES_texture_float_linear"); /* linear filtering with float pixel textures */
 ```
 
-to lower the branch divergence on the gpu, several shaders are used now. for future work, the fft and philips spectrum calculations can be done in gpu compute shaders instead of cpu. currently code is in cpu, cpu have the advantage of more flexible in the coding part where classes can be easily called by other classes. webassembly also can be used
+## future work
+to lower the branch divergence on the gpu, several shaders are used now. in the future, the fft and philips spectrum calculations can be done in gpu compute shaders instead of cpu. currently code is in cpu, cpu have the advantage of more flexible in the coding part where classes can be easily called by other classes. webassembly also can be used
 
 ![0](a/image/0.png)
 ![1](a/image/1.png)
