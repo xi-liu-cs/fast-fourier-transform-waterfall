@@ -95,8 +95,8 @@ at the right side of the webpage, click and release the sliders to see the chang
 do not try to see this project on a mobile device, since a lot of the mobile
 devices do not support opengl extensions for floating point textures
 ```javascript
-this.gl.getExtension("EXT_color_buffer_float"); /* enable gl.RGBA32F to be color renderable */
-this.gl.getExtension("OES_texture_float_linear"); /* linear filtering with float pixel textures */
+gl.getExtension("EXT_color_buffer_float"); /* enable gl.RGBA32F to be color renderable */
+gl.getExtension("OES_texture_float_linear"); /* linear filtering with float pixel textures */
 ```
 
 ## future work
