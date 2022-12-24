@@ -100,7 +100,7 @@ this.gl.getExtension("OES_texture_float_linear"); /* linear filtering with float
 ```
 
 ## future work
-to lower the branch divergence on the gpu, several shaders are used now. in the future, the fft and philips spectrum calculations can be done in gpu compute shaders instead of cpu. currently code is in cpu, cpu have the advantage of more flexible in the coding part where classes can be easily called by other classes. webassembly also can be used
+To lower the branch divergence on the gpu caused by conditional statements, several shaders are used now and using ```getElementById()``` to switch different shaders for different objects. in the future, the fft and philips spectrum calculations can be done in gpu compute shaders instead of cpu. currently code is in cpu, cpu have the advantage of more flexible in the coding part where classes can be easily called by other classes. webassembly also can be used
 
 ![0](a/image/0.png)
 ![1](a/image/1.png)
