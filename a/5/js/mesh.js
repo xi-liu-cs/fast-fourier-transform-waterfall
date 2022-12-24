@@ -32,11 +32,14 @@ class mesh
         }
         for(let i = 0; i <= n; ++i)
         {
+            let v = i / n,
+            _2v_1 = 2 * v - 1;
             for(let j = 0; j <= n; ++j)
             {
-                vertex_array[vertex_i] = 2 * i / n - 1;
+                let u = j / n;
+                vertex_array[vertex_i] = _2v_1; /* 2v - 1, [0, 1]  -> [-1, 1] */
                 vertex_array[vertex_i + 1] = 0.0;
-                vertex_array[vertex_i + 2] = 2 * j / n - 1;
+                vertex_array[vertex_i + 2] = 2 * u - 1; /* 2u - 1 */
                 vertex_i += 3;
             }
         }
@@ -59,7 +62,7 @@ class mesh
         this.gl.bindTexture(this.gl.TEXTURE_2D, a.tex.tex_obj);
         this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.vert_buf);
         this.gl.enableVertexAttribArray(this.program.a_pos);
-        this.gl.vertexAttribPointer(this.program.a_pos, 3, this.gl.FLOAT, false, 0, 0);
+        this.gl.vertexAttribPointer(this.program.a_pos, 3, this.gl.FLOAT, false, 0, 0); 
         this.gl.bindBuffer(this.gl.ELEMENT_ARRAY_BUFFER, this.idx_buf);
         this.gl.drawElements(a.mode, this.index_array.length, this.gl.UNSIGNED_INT, 0);
     }
