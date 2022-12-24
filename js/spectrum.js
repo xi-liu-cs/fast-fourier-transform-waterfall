@@ -3,6 +3,7 @@ class spectrum
     constructor(gl, n)
     {
         this.amplitude = 0.0001;
+        this.c = new complex();
         this.g = 9.81; /* gravity */
         this.gl = gl;
         this.length = 1000;
@@ -88,7 +89,7 @@ class spectrum
                     k_x: 2.0 * Math.PI * (-i - this.n / 2.0) / this.length,
                     k_y: 2.0 * Math.PI * (-j - this.n / 2.0) / this.length,
                 };
-                a[i][j] = new complex().conj(this.gauss_rand(this.spectrum(spectrum)));
+                a[i][j] = this.c.conj(this.gauss_rand(this.spectrum(spectrum)));
             }
         }
         return a;
@@ -99,7 +100,8 @@ class spectrum
         if(move.value == 1)
             t = 1;
         let n = this.n,
-        a = {x: new Array(n), y: new Array(n), z: new Array(n)};
+        a = {x: new Array(n), y: new Array(n), z: new Array(n)},
+        c = this.c;
         for(let i = 0; i < n; ++i)
         {
             a.x[i] = new Array(n);
@@ -111,13 +113,13 @@ class spectrum
                 k_y = 2.0 * Math.PI * (j - this.n / 2.0) / this.length,
                 k_length = Math.sqrt(k_x * k_x + k_y * k_y),
                 omega = Math.sqrt(this.g * k_length),
-                polar = new complex().polar(1.0, t * omega),
-                h0_t = new complex().mul(h0[i][j], polar),
-                h1_t = new complex().mul(h1[i][j], new complex().conj(polar)),
-                h_tilde = new complex().add(h0_t, h1_t),
-                h_img = new complex().mul(new complex(0, 1.0), h_tilde),
-                x = new complex().scalar_mul(h_img, k_x / k_length),
-                z = new complex().scalar_mul(h_img, k_y / k_length);
+                polar = c.polar(1.0, t * omega),
+                h0_t = c.mul(h0[i][j], polar),
+                h1_t = c.mul(h1[i][j], this.c.conj(polar)),
+                h_tilde = c.add(h0_t, h1_t),
+                h_img = c.mul(new complex(0, 1.0), h_tilde),
+                x = c.scalar_mul(h_img, k_x / k_length),
+                z = c.scalar_mul(h_img, k_y / k_length);
                 a.x[i][j] = x;
                 a.y[i][j] = h_tilde;
                 a.z[i][j] = z;

@@ -77,23 +77,23 @@ class tex
     tex(x, y, z)
     {
         let n = this.n,
-        out = new Array(4 * n * n);
-        let vi = 0,
+        a = new Array(4 * n * n); /* 'a' is a sequence of floats grouped into sets of 4 values (gl.RGBA32f) */
+        let a_i = 0,
         sign = [1, -1];
         for(let i = 0; i < n; ++i)
         {
             for(let j = 0; j < n; ++j)
             {
                 let s = sign[(i + j) & 1];
-                out[vi] = s * x[i][j];
-                out[vi + 1] = s * y[i][j];
-                out[vi + 2] = s * z[i][j];
-                out[vi + 3] = 1.0;
-                vi += 4;
+                a[a_i] = s * x[i][j];
+                a[a_i + 1] = s * y[i][j];
+                a[a_i + 2] = s * z[i][j];
+                a[a_i + 3] = 1.0;
+                a_i += 4;
             }
         }
         this.tex_start(this.tex_obj);
-        this.gl.texImage2D(this.gl.TEXTURE_2D, 0, this.gl.RGBA32F, this.n, this.n, 0, this.gl.RGBA, this.gl.FLOAT, new Float32Array(out));
+        this.gl.texImage2D(this.gl.TEXTURE_2D, 0, this.gl.RGBA32F, this.n, this.n, 0, this.gl.RGBA, this.gl.FLOAT, new Float32Array(a));
         return this;
     }
 }
