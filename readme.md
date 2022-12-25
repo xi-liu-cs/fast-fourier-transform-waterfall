@@ -55,7 +55,7 @@ wave spectrum $p_h(k)$
 p_h(k) = \frac{a(e ^ {-1 / (kl) ^ 2})}{k ^ 4} |k \cdot w| ^ 2
 ```
 $w$ = wind direction
-$L = V ^ 2 / g$ = max wave from wind of speed v
+$L = V ^ 2 / g$ = max wave from wind of speed V
 
 where $L = V ^ 2 / g$ is the largest possible waves arising
 from a continuous wind of speed $V$,
