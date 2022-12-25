@@ -59,8 +59,7 @@ $L = V ^ 2 / g$ = max wave from wind of speed V
 
 where $L = V ^ 2 / g$ is the largest possible waves arising
 from a continuous wind of speed $V$,
-$g$ is the gravitational constant, and $w$ is
-the direction of the wind
+$g$ is the gravitational constant, and $w$ is the direction of the wind
 
 $\widetilde{h}(k) = \frac{1}{\sqrt{2}} (\xi_r + i \xi_i) \sqrt{p_h(k)}$
 where $\xi_r$ and $\xi_i$ are ordinary independent draws from a gaussian
