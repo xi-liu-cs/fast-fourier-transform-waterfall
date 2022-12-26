@@ -11,6 +11,7 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
 ```math
 \displaylines
 {
+  \mathbf{x} = \mathbf{x}_0 - \sum_{i = 1} ^ N \frac{\mathbf{k}_i}{k_i} A_i \sin(\mathbf{k}_i \cdot \mathbf{x}_0 - \omega_i t + \phi_i)\\
   \widetilde{f}(k) = \int_{\mathbb{R} ^ n} f(x) e ^ {-2 \pi i k x} dx\\
   \text{for discrete signal $f$ with $N$ samples}\\
   \widetilde{f}(k) = \sum_{n = 0} ^ {N - 1} f(n) e ^ {\frac{-2 \pi i k n}{N}}\\
