@@ -29,7 +29,6 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
 $L = V ^ 2 / g$ = max wave from wind of speed V}\\
   \widetilde{h}(k) = \frac{1}{\sqrt{2}} (\xi_r + i \xi_i) \sqrt{p_h(k)}, \quad \text{$\xi_r$ and $\xi_i$ are independently generated from a gaussian
 random number generator}\\
-  \mathbf{d}(\mathbf{x}, t) = \sum_{\mathbf{k}} -i \frac{\mathbf{k}}{k} \widetilde{h}(\mathbf{k}, t) e ^ {i\mathbf{k} \cdot x}, \quad \text{the 2d displacement vector field is computed using the fourier amplitudes of the height field}\\
 }
 ```
 
