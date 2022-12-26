@@ -87,8 +87,8 @@ wave()
 }
 ```
 
-for the fft computation, the cooley tukey fft algorithm is used.
-the result of 2d ifft is a wave height field, then the glsl functions texture2d is used to lookup from within that texture.
+For the fft computation, the cooley tukey fft algorithm is used.
+The result of 2d ifft is a displacement map, then the glsl function ```texture2d()``` is used to lookup from within that texture. Vertex positions, surface normals, and various data are computed from the displacement map.
 
 At the right side of the webpage, click and release the sliders to see the change.<br>
 You should see this project on a device that support extensions for floating point textures
