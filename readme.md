@@ -99,7 +99,7 @@ gl.getExtension("OES_texture_float_linear"); /* linear filtering with float pixe
 ```
 
 ## future work
-To lower the branch divergence on the gpu caused by conditional statements, several shaders are used now and using ```getElementById()``` to switch different shaders for different objects. For better file organization, the shaders should be written in separate files and loaded through ```XMLHttpRequest()```. In the future, the fft and philips spectrum calculations can be done in gpu compute shaders instead of cpu. currently code is in cpu, cpu have the advantage of more flexible in the coding part where classes can be easily called by other classes, but gpgpus can be faster in terms of floating point operations per second. Webassembly also can be used to lower the overhead.
+To lower the branch divergence on the gpu caused by conditional statements, several shaders are used now and using ```getElementById()``` to switch different shaders for different objects. For better file organization, the shaders should be written in separate files and loaded through ```XMLHttpRequest()```. In the future, the fft and philips spectrum calculations can be done in gpu compute shaders instead of cpu. As the size of the displacement texture increases, the time needed to transfer data between cpu and gpu increases. The massively parallel architecture of gpgpus can be faster for the fft and phillips spectrum calcualtion. Webassembly also can be used to lower the overhead.
 
 ![0](a/image/0.png)
 ![1](a/image/1.png)
