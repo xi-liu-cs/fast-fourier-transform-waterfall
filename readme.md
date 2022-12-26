@@ -26,7 +26,7 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
   i, j \in \mathbb{Z}, i \in \left[-\frac{n_i}{2}, \frac{n_i}{2}\right), j \in \left[-\frac{n_j}{2}, \frac{n_j}{2}\right)\\
   \text{The height field is generated at discrete points } x = \left(\frac{i \cdot len_x}{n_i}, \frac{j \cdot len_z}{n_j}\right)\\
   \text{philips spectrum }p_h(\mathbf{k}) = \frac{a|\mathbf{k} \cdot w| ^ 2 e ^ {-1 / (kL) ^ 2}}{k ^ 4},\quad a \in \mathbb{R}, \text{$w$ = wind direction. $L = \frac{V ^ 2}{g}$ = max wave from wind with speed V}\\
-  \widetilde{h}(k) = \sqrt{\frac{p_h(k)}{2}} (\xi_r + i \xi_i), \quad \text{$\xi_r$ and $\xi_i$ are independently generated from a gaussian
+  \widetilde{h}(k) = \sqrt{\frac{p_h(k)}{2}} (\xi_1 + i \xi_2), \quad \text{$\xi_1$ and $\xi_2$ are independently generated from a gaussian
 random number generator}\\
 }
 ```
