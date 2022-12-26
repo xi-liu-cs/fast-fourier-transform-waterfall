@@ -103,3 +103,8 @@ To lower the branch divergence on the gpu caused by conditional statements, seve
 
 ![0](a/image/0.png)
 ![1](a/image/1.png)
+![3](a/image/3.png)
+![4](a/image/4.png)
+![5](a/image/5.png)
+![6](a/image/6.png)
+
