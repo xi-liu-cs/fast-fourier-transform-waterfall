@@ -12,10 +12,10 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
 \displaylines
 {
   \widetilde{f}(k) = \int_{\mathbb{R} ^ n} f(x) e ^ {-2 \pi i k x} dx\\
-  \text{for discrete signal $f$ with $N$ samples}\\
-  \widetilde{f}(k) = \sum_{n = 0} ^ {N - 1} f(n) e ^ {\frac{-2 \pi i k n}{N}}\\
-  \text{computing $\widetilde{f}$ of $f$ with $N$ samples naively require $N$ complex multiplications}\\
-  \text{and $N - 1$ complex additions for each element of $\widetilde{f}$, so its total time complexity is $\mathcal{O}(n ^ 2)$}\\
+  \text{for discrete signal $f$ with $n_s$ samples}\\
+  \widetilde{f}(k) = \sum_{n = 0} ^ {n_s - 1} f(n) e ^ {\frac{-2 \pi i k n}{n_s}}\\
+  \text{computing $\widetilde{f}$ of $f$ with $n_s$ samples naively require $n_s$ complex multiplications}\\
+  \text{and $n_s - 1$ complex additions for each element of $\widetilde{f}$, so its total time complexity is $\mathcal{O}(n ^ 2)$}\\
   \text{with fft, the time complexity is reduced to $\mathcal{O}(n \log n)$}\\
   \text{expresses wave height at horizontal position $(x, z)$ as sum of sinusoids with complex amplitudes}\\
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
