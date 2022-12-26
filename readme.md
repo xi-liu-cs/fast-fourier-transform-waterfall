@@ -27,15 +27,11 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
   \text{The height field is generated at discrete points } x = \left(\frac{n L_x}{N}, \frac{m L_z}{M}\right)\\
   \text{wave spectrum }p_h(k) = \frac{a(e ^ {-1 / (kl) ^ 2})}{k ^ 4} |k \cdot w| ^ 2\quad \text{$w$ = wind direction.
 $L = V ^ 2 / g$ = max wave from wind of speed V}\\
+  \widetilde{h}(k) = \frac{1}{\sqrt{2}} (\xi_r + i \xi_i) \sqrt{p_h(k)} \quad \text{$\xi_r$ and $\xi_i$ are independently generated from a gaussian
+random number generator}\\
+  D(X, t) = \sum -i \frac{K}{k} \widetilde{h}(K, t) e ^ {ikx} \quad \text{in the fft representation, the 2d displacement vector field is computed using the fourier amplitudes of the height field}\\
 }
 ```
-
-$\widetilde{h}(k) = \frac{1}{\sqrt{2}} (\xi_r + i \xi_i) \sqrt{p_h(k)}$
-where $\xi_r$ and $\xi_i$ are independently generated from a gaussian
-random number generator, with mean 0 and standard deviation 1.
-
-in the fft representation, the 2d displacement vector field is computed using the fourier amplitudes of the height field, as
-$D(X, t) = \sum -i \frac{K}{k} \widetilde{h}(K, t) e ^ {ikx}$
 
 ```javascript
 wave()
