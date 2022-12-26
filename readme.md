@@ -30,8 +30,7 @@ $L_x \times L_z$ is the horizontal dimensions of the wave.
 ```math
 \displaylines
 {
-  k = (k_x, k_z)\\
-  k_x = 2 \pi n / L_x,\quad k_z = 2 \pi n / L_z\\
+  \mathbf{k} = (k_x, k_z) = \left(\frac{2 \pi n}{L_x}, \frac{2 \pi n}{L_z}\right)\\
   n, m \in \mathbb{N}, n \in \left[-\frac{N}{2}, \frac{N}{2}\right), m \in \left[-\frac{M}{2}, \frac{M}{2}\right)\\
 }
 ```
@@ -42,19 +41,14 @@ wave spectrum $p_h(k)$
 ```math
 p_h(k) = \frac{a(e ^ {-1 / (kl) ^ 2})}{k ^ 4} |k \cdot w| ^ 2
 ```
-$w$ = wind direction
-$L = V ^ 2 / g$ = max wave from wind of speed V
-
-where $L = V ^ 2 / g$ is the largest possible waves arising
-from a continuous wind of speed $V$,
-$g$ is the gravitational constant, and $w$ is the direction of the wind
+$w$ = wind direction.
+$L = V ^ 2 / g$ = max wave from wind of speed V.
 
 $\widetilde{h}(k) = \frac{1}{\sqrt{2}} (\xi_r + i \xi_i) \sqrt{p_h(k)}$
 where $\xi_r$ and $\xi_i$ are ordinary independent draws from a gaussian
-random number generator, with mean 0 and standard deviation 1. gaussian distributed random numbers tend to follow the experimental data on ocean waves
+random number generator, with mean 0 and standard deviation 1.
 
-in the fft representation, the 2d displacement vector field is computed using the fourier amplitudes
-of the height field, as
+in the fft representation, the 2d displacement vector field is computed using the fourier amplitudes of the height field, as
 $D(X, t) = \sum -i \frac{K}{k} \widetilde{h}(K, t) e ^ {ikx}$
 
 ```javascript
