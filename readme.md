@@ -24,19 +24,14 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
   \omega(k) = \pm \sqrt{gk} \quad \text{$g$ is gravity constant, $k$ is wavevector, $\omega$ is frequency}\\
   \mathbf{k} = (k_x, k_z) = \left(\frac{2 \pi n}{L_x}, \frac{2 \pi m}{L_z}\right), \quad L_x \times L_z \text{ is the horizontal dimensions of the wave}\\
   n, m \in \mathbb{Z}, n \in \left[-\frac{N}{2}, \frac{N}{2}\right), m \in \left[-\frac{M}{2}, \frac{M}{2}\right)\\
-  \text{The height field is generated at discrete points } x = \left(\frac{n L_x}{N}, \frac{m L_z}{M}\right)
+  \text{The height field is generated at discrete points } x = \left(\frac{n L_x}{N}, \frac{m L_z}{M}\right)\\
+  \text{wave spectrum }p_h(k) = \frac{a(e ^ {-1 / (kl) ^ 2})}{k ^ 4} |k \cdot w| ^ 2\quad \text{$w$ = wind direction.
+$L = V ^ 2 / g$ = max wave from wind of speed V}\\
 }
 ```
 
-wave spectrum $p_h(k)$
-```math
-p_h(k) = \frac{a(e ^ {-1 / (kl) ^ 2})}{k ^ 4} |k \cdot w| ^ 2
-```
-$w$ = wind direction.
-$L = V ^ 2 / g$ = max wave from wind of speed V.
-
 $\widetilde{h}(k) = \frac{1}{\sqrt{2}} (\xi_r + i \xi_i) \sqrt{p_h(k)}$
-where $\xi_r$ and $\xi_i$ are ordinary independent draws from a gaussian
+where $\xi_r$ and $\xi_i$ are independently generated from a gaussian
 random number generator, with mean 0 and standard deviation 1.
 
 in the fft representation, the 2d displacement vector field is computed using the fourier amplitudes of the height field, as
