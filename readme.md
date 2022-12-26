@@ -17,20 +17,10 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
   \text{computing $\widetilde{f}$ of $f$ with $N$ samples naively require $N$ complex multiplications}\\
   \text{and $N - 1$ complex additions for each element of $\widetilde{f}$, so its total time complexity is $\mathcal{O}(n ^ 2)$}\\
   \text{with fft, the time complexity is reduced to $\mathcal{O}(n \log n)$}\\
-  \text{let } h(t) \text{ be an arbitrary, aperiodic function}\\
+  \text{expresses wave height at horizontal position $(x, z)$ as sum of sinusoids
+with complex time dependent amplitudes}\\
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
   h(\text{x}, t) = \sum_{\text{k}} \widetilde{h} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
-}
-```
-
-expresses wave height at horizontal position $(x, z)$ as sum of sinusoids
-with complex time dependent amplitudes
-
-```math
-\displaylines
-{
-  \mathbf{x} = (x, z)\\
-  h(\mathbf{x}, t) = \sum \widetilde{h} (\mathbf{k}, t) e ^ {i\mathbf{k} \cdot \mathbf{x}}\\
 }
 ```
 
