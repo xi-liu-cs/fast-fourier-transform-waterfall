@@ -49,7 +49,6 @@ for a wave with horizontal dimensions $L_x \times L_z$
 
 generates height field at discrete points $x = (n L_x / N, m L_z / M)$
 
-float value
 wave spectrum $p_h(k)$
 ```math
 p_h(k) = \frac{a(e ^ {-1 / (kl) ^ 2})}{k ^ 4} |k \cdot w| ^ 2
