@@ -24,10 +24,9 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
   \omega(k) = \pm \sqrt{gk} \quad \text{$g$ is gravity constant, $k$ is wavevector, $\omega$ is frequency}\\
   \mathbf{k} = (k_x, k_z) = \left(\frac{2 \pi n}{L_x}, \frac{2 \pi m}{L_z}\right), \quad L_x \times L_z \text{ is the horizontal dimensions of the wave}\\
   n, m \in \mathbb{Z}, n \in \left[-\frac{N}{2}, \frac{N}{2}\right), m \in \left[-\frac{M}{2}, \frac{M}{2}\right)\\
+  \text{The height field is generated at discrete points } x = \left(\frac{n L_x}{N}, \frac{m L_z}{M}\right)
 }
 ```
-
-generates height field at discrete points $x = (n L_x / N, m L_z / M)$
 
 wave spectrum $p_h(k)$
 ```math
