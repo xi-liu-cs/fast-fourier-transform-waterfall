@@ -2,7 +2,7 @@
 ![2](a/image/2.png)
 Xi Liu<br>
 This project is done for computer graphics course at New York University, fall 2022, using WebGL.<br>
-Waterfall simulation using fast fourier transformation. A texture is used for displacement mapping, in which the ```x, y, z``` displacements calculated from inverse fft are combined into one texture in ```tex()``` in ```lib.js``` using a ```format``` of ```gl.RGBA32F``` in ```gl.texImage2D```. For each successive of four components, they are grouped into one element, assigning the $x, y, z$ displacements $x[i][j], y[i][j], z[i][j]$ to the red, green, blue channels $a[a_i], a[a_i + 1], a[a_i + 2]$ respectively, and assigning a value of one to the alpha channel. First, in the vertex shader, use the ```texture2D()``` to lookup the texture and obtain the vec3 displacement and add it to the vertex position ```v_pos```. Then, in the fragment shader, use the ```texture2D()``` again to sample the texture to obtain the vec3 displacement, then compute the surface normal for each varying texture coordinate from the ```s_height_map``` sampler inside the ```normal_map()``` function using the finite difference method.
+Waterfall simulation using a statistical model of wave height field and fast fourier transformation. A texture is used for displacement mapping, in which the ```x, y, z``` displacements calculated from inverse fft are combined into one texture in ```tex()``` in ```lib.js``` using a ```format``` of ```gl.RGBA32F``` in ```gl.texImage2D```. For each successive of four components, they are grouped into one element, assigning the $x, y, z$ displacements $x[i][j], y[i][j], z[i][j]$ to the red, green, blue channels $a[a_i], a[a_i + 1], a[a_i + 2]$ respectively, and assigning a value of one to the alpha channel. First, in the vertex shader, use the ```texture2D()``` to lookup the texture and obtain the vec3 displacement and add it to the vertex position ```v_pos```. Then, in the fragment shader, use the ```texture2D()``` again to sample the texture to obtain the vec3 displacement, then compute the surface normal for each varying texture coordinate from the ```s_height_map``` sampler inside the ```normal_map()``` function using the finite difference method.
 
 ## method
 The task is to find height $h$ given horizontal position $x, z$, and $t$.<br>
@@ -107,4 +107,3 @@ To lower the branch divergence on the gpu caused by conditional statements, seve
 ![4](a/image/4.png)
 ![5](a/image/5.png)
 ![6](a/image/6.png)
-
