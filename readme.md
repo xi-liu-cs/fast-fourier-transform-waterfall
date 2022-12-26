@@ -6,7 +6,7 @@ Waterfall simulation using a statistical model of random wave height field and f
 
 ## method
 The task is to find height $h$ given horizontal position $x, z$, and time $t$.<br>
-Use a sum of sin and cos waves to describe the wave height field, then use fft to compute the sum.<br>
+Use a sum of sin and cos waves to decompose the wave height field, then use fft to compute the sum.<br>
 Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\mathbb{R} ^ n, \mathbb{C}) | \forall \alpha, \beta \in \mathbb{N} ^ n, \sup_{x \in \mathbb{R} ^ n} |x ^ {\alpha} \delta ^ {\beta} f(x)| < \infty\\}$ be a schwartz space, $f \in \mathscr{S}(\mathbb{R} ^ n)$ be a signal. Define $\widetilde f$ as the fourier transform of $f$
 ```math
 \displaylines
