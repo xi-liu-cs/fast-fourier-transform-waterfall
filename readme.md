@@ -91,7 +91,7 @@ For the fft computation, the cooley tukey fft algorithm is used.
 The result of 2d ifft is a displacement map, then the glsl function ```texture2d()``` is used to lookup from within that texture. Vertex positions, surface normals, and various data are computed from the displacement map.
 
 At the right side of the webpage, click and release the sliders to see the change.<br>
-You should see this project on a device that support extensions for floating point textures
+You should see this project on a device that support extensions for floating point textures.
 ```javascript
 gl.getExtension("EXT_color_buffer_float"); /* enable gl.RGBA32F to be color renderable */
 gl.getExtension("OES_texture_float_linear"); /* linear filtering with float pixel textures */
