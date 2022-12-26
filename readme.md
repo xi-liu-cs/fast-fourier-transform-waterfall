@@ -21,15 +21,15 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
   h(\mathbf{x}, t) = \sum_{\mathbf{k}} \widetilde{h} (\mathbf{k}, t) e ^ {i\mathbf{k} \cdot \text{x}}\\
   \widetilde{h}(\mathbf{k}, t) = \widetilde{h}_0(\mathbf{k})e ^ {i\omega(k)t} + \widetilde{h}_0 ^ *(-\mathbf{k})e ^ {-i\omega(k)t},\quad \widetilde{h} ^ *(\mathbf{k}, t) = \widetilde{h}(-\mathbf{k}, t)\\
-  \omega(k) = \pm \sqrt{gk} \quad \text{dispersion relation, $g$ is gravity constant, $k$ is wavevector, $\omega$ is frequency}\\
+  \omega(k) = \pm \sqrt{gk}, \quad \text{dispersion relation, $g$ is gravity constant, $k$ is wavevector, $\omega$ is frequency}\\
   \mathbf{k} = (k_x, k_z) = \left(\frac{2 \pi n}{L_x}, \frac{2 \pi m}{L_z}\right), \quad L_x \times L_z \text{ is the horizontal dimensions of the wave}\\
   n, m \in \mathbb{Z}, n \in \left[-\frac{N}{2}, \frac{N}{2}\right), m \in \left[-\frac{M}{2}, \frac{M}{2}\right)\\
   \text{The height field is generated at discrete points } x = \left(\frac{n L_x}{N}, \frac{m L_z}{M}\right)\\
-  \text{wave spectrum }p_h(k) = \frac{a(e ^ {-1 / (kl) ^ 2})}{k ^ 4} |k \cdot w| ^ 2\quad \text{$w$ = wind direction.
+  \text{wave spectrum }p_h(k) = \frac{a(e ^ {-1 / (kl) ^ 2})}{k ^ 4} |k \cdot w| ^ 2,\quad \text{$w$ = wind direction.
 $L = V ^ 2 / g$ = max wave from wind of speed V}\\
-  \widetilde{h}(k) = \frac{1}{\sqrt{2}} (\xi_r + i \xi_i) \sqrt{p_h(k)} \quad \text{$\xi_r$ and $\xi_i$ are independently generated from a gaussian
+  \widetilde{h}(k) = \frac{1}{\sqrt{2}} (\xi_r + i \xi_i) \sqrt{p_h(k)}, \quad \text{$\xi_r$ and $\xi_i$ are independently generated from a gaussian
 random number generator}\\
-  \mathbf{d}(\mathbf{x}, t) = \sum_{\mathbf{k}} -i \frac{\mathbf{k}}{k} \widetilde{h}(\mathbf{k}, t) e ^ {i\mathbf{k} \cdot x} \quad \text{the 2d displacement vector field is computed using the fourier amplitudes of the height field}\\
+  \mathbf{d}(\mathbf{x}, t) = \sum_{\mathbf{k}} -i \frac{\mathbf{k}}{k} \widetilde{h}(\mathbf{k}, t) e ^ {i\mathbf{k} \cdot x}, \quad \text{the 2d displacement vector field is computed using the fourier amplitudes of the height field}\\
 }
 ```
 
