@@ -32,7 +32,7 @@ $L_x \times L_z$ is the horizontal dimensions of the wave.
 {
   k = (k_x, k_z)\\
   k_x = 2 \pi n / L_x,\quad k_z = 2 \pi n / L_z\\
-  n, m \in \mathbb{N}, n \in [-\frac{N}{2}, \frac{N}{2}), m \in [-\frac{M}{2}, \frac{M}{2})\\
+  n, m \in \mathbb{N}, n \in \left[-\frac{N}{2}, \frac{N}{2}\right), m \in \left[-\frac{M}{2}, \frac{M}{2}\right)\\
 }
 ```
 
