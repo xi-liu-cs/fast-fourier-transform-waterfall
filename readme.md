@@ -22,19 +22,17 @@ with complex time dependent amplitudes}\\
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
   h(\text{x}, t) = \sum_{\text{k}} \widetilde{h} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
   \widetilde{h}(\text{k}, t) = \widetilde{h}_0(\text{k})e ^ {i\omega(k)t} + \widetilde{h}_0 ^ *(-k)e ^ {-i\omega(k)t}\\
+  \omega = \pm \sqrt{gk} \quad \text{$g$ is gravity constant, $k$ is wavevector, $\omega$ is frequency}\\
 }
 ```
 
-$\mathbf{k}$ is a 2d vector with components
-for a wave with horizontal dimensions $L_x \times L_z$
+$L_x \times L_z$ is the horizontal dimensions of the wave.
 ```math
 \displaylines
 {
   k = (k_x, k_z)\\
-  k_x = 2 \pi n / L_x\\
-  k_z = 2 \pi n / L_z\\
-  -N / 2 \leq n < N / 2\\
-  -M / 2 \leq m < M / 2\\
+  k_x = 2 \pi n / L_x,\quad k_z = 2 \pi n / L_z\\
+  -N / 2 \leq n < N / 2,\quad -M / 2 \leq m < M / 2\\
 }
 ```
 
