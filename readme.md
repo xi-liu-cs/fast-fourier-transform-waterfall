@@ -23,15 +23,8 @@ with complex time dependent amplitudes}\\
   h(\text{x}, t) = \sum_{\text{k}} \widetilde{h} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
   \widetilde{h}(\text{k}, t) = \widetilde{h}_0(\text{k})e ^ {i\omega(k)t} + \widetilde{h}_0 ^ *(-k)e ^ {-i\omega(k)t}\\
   \omega = \pm \sqrt{gk} \quad \text{$g$ is gravity constant, $k$ is wavevector, $\omega$ is frequency}\\
-}
-```
-
-$L_x \times L_z$ is the horizontal dimensions of the wave.
-```math
-\displaylines
-{
-  \mathbf{k} = (k_x, k_z) = \left(\frac{2 \pi n}{L_x}, \frac{2 \pi n}{L_z}\right)\\
-  n, m \in \mathbb{N}, n \in \left[-\frac{N}{2}, \frac{N}{2}\right), m \in \left[-\frac{M}{2}, \frac{M}{2}\right)\\
+  \mathbf{k} = (k_x, k_z) = \left(\frac{2 \pi n}{L_x}, \frac{2 \pi n}{L_z}\right), \quad L_x \times L_z \text{ is the horizontal dimensions of the wave.}\\
+  n, m \in \mathbb{Z}, n \in \left[-\frac{N}{2}, \frac{N}{2}\right), m \in \left[-\frac{M}{2}, \frac{M}{2}\right)\\
 }
 ```
 
