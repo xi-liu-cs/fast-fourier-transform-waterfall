@@ -27,7 +27,7 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
   \text{The height field is generated at discrete points } x = \left(\frac{i \cdot len_x}{n_i}, \frac{j \cdot len_z}{n_j}\right)\\
   \text{wave spectrum }p_h(k) = |k \cdot w| ^ 2\frac{a(e ^ {-1 / (kL) ^ 2})}{k ^ 4},\quad a \in \mathbb{R}, \text{$w$ = wind direction.
 $L = \frac{V ^ 2}{g}$ = max wave from wind of speed V}\\
-  \widetilde{h}(k) = \frac{\sqrt{p_h(k)}}{\sqrt{2}} (\xi_r + i \xi_i), \quad \text{$\xi_r$ and $\xi_i$ are independently generated from a gaussian
+  \widetilde{h}(k) = \sqrt{\frac{p_h(k)}}{2}} (\xi_r + i \xi_i), \quad \text{$\xi_r$ and $\xi_i$ are independently generated from a gaussian
 random number generator}\\
 }
 ```
