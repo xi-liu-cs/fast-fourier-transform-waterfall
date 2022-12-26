@@ -21,6 +21,7 @@ Let $\mathscr{S}(\mathbb{R} ^ n, \mathbb{C}) = \\{f \in \mathbb{C} ^ {\infty}(\m
 with complex time dependent amplitudes}\\
   \text{wave height } h(\text{x}, t), \text{horizontal position } \text{x} = (x, z)\\
   h(\text{x}, t) = \sum_{\text{k}} \widetilde{h} (\text{k}, t) e ^ {i\text{k} \cdot \text{x}}\\
+  \widetilde{h}(\text{k}, t) = \widetilde{h}_0(\text{k})e ^ {i\omega(k)t} + \widetilde{h}_0 ^ *(-k)e ^ {-i\omega(k)t}\\
 }
 ```
 
